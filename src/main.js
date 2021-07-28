@@ -1,6 +1,8 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 
+// 引入路由
+import router from "./router/";
 // 全局样式在此设置
 // import './index.css';
 
@@ -8,4 +10,4 @@ import App from "./App.vue";
 // import vm from "virtual-module";
 // console.log(111, vm);
 
-createApp(App).mount("#app");
+createApp(App).use(router).mount("#app");

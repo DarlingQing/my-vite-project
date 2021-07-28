@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { resolve } from "path";
 import { viteMockServe } from "vite-plugin-mock";
+import VueJsx from "@vitejs/plugin-vue-jsx";
 // import virtualModule from "./plugins/vite-plugin-example";
 import i18n from "./plugins/vite-plugin-i18n";
 
@@ -23,7 +24,14 @@ export default defineConfig({
       "@": resolve("./src"),
     },
   },
+  // Vue的整合也通过插件实现
   // plugins: [vue(), viteMockServe({})],
   // plugins: [vue(), viteMockServe({}), virtualModule()],
-  plugins: [vue(), viteMockServe({}), i18n],
+  // eslint-disable-next-line prettier/prettier
+  plugins: [
+    VueJsx(),
+    vue(),
+    viteMockServe({}),
+    i18n,
+  ],
 });
